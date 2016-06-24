@@ -4,18 +4,18 @@
 
 ## Versions
 
-* Ansible v2.0.2.0
+* Ansible v1.9.6
 
 ## Instructions
 
 * `vagrant up`
 * Make any changes you need to the box. Be sure to reflect these changes in the provisioning scripts.
 * Before packaging up the box, ssh in, and run the commands that are in the comments at the end of this readme.
-* Package up the box with `vagrant package --output bento-ansible-0.1.0.box`. Replace `0.1.0` with the version number.
+* Package up the box with `vagrant package --output bento-ansible-0.2.0.box`. Replace `0.2.0` with the version number.
 * Destroy the vm with `vagrant destroy --force`.
-* Add the new box to vagrant's local list with: `vagrant box add bento-ansible-010 bento-ansible-0.1.0.box`. Again, replace `010` and `0.1.0` with the version number.
+* Add the new box to vagrant's local list with: `vagrant box add bento-ansible-020 bento-ansible-0.2.0.box`. Again, replace `020` and `0.2.0` with the version number.
 * Delete the `.vagrant` folder with `rm -rf .vagrant`.
-* Test out the box by going to a different folder, running `vagrant init bento-ansible-010`, and changing the `Vagrantfile` to fit your needs. Next, run `vagrant up`, and ensure everything is working.
+* Test out the box by going to a different folder, running `vagrant init bento-ansible-020`, and changing the `Vagrantfile` to fit your needs. Next, run `vagrant up`, and ensure everything is working.
 * Create a new version on Atlas.
 * Add a new provider to the version. The type should be `virtualbox`. Upload the `.box` file output by the `vagrant package` command above.
 
@@ -27,5 +27,9 @@
 * `sudo su`
 * `history -c && exit`
 * `cat /dev/null > ~/.bash_history && history -c && exit`
+
+## Changes in this version (v0.2.0)
+
+* Drop Ansible version from v2.0.2.0 to v1.9.6
 
 ## TODO
